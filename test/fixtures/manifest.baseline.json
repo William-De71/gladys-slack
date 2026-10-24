@@ -1,0 +1,288 @@
+{
+  "manifest": {
+    "config_schema": [
+      {
+        "key": "intro",
+        "type": "section"
+      },
+      {
+        "key": "bot_token",
+        "type": "secret"
+      },
+      {
+        "key": "app_token",
+        "type": "secret"
+      },
+      {
+        "key": "link_help",
+        "type": "section"
+      },
+      {
+        "key": "forward_direct_messages",
+        "type": "boolean"
+      },
+      {
+        "key": "channels_help",
+        "type": "section"
+      },
+      {
+        "key": "default_channel",
+        "type": "string"
+      },
+      {
+        "key": "language",
+        "type": "select"
+      }
+    ],
+    "actions": ["test_connection"],
+    "action_fields": {
+      "test_connection": []
+    },
+    "widgets": [
+      {
+        "key": "status",
+        "settings": ["show_text"],
+        "options": {}
+      }
+    ],
+    "scene_triggers": [
+      {
+        "key": "message_received",
+        "fields": [
+          {
+            "key": "channel_type",
+            "options": ["im", "channel", "group"]
+          },
+          {
+            "key": "channel_id",
+            "options": []
+          },
+          {
+            "key": "user_id",
+            "options": []
+          },
+          {
+            "key": "gladys_user",
+            "options": []
+          },
+          {
+            "key": "text",
+            "options": []
+          }
+        ],
+        "variables": [
+          {
+            "key": "text",
+            "type": "string"
+          },
+          {
+            "key": "user_id",
+            "type": "string"
+          },
+          {
+            "key": "user_name",
+            "type": "string"
+          },
+          {
+            "key": "gladys_user",
+            "type": "string"
+          },
+          {
+            "key": "first_name",
+            "type": "string"
+          },
+          {
+            "key": "channel_id",
+            "type": "string"
+          },
+          {
+            "key": "channel_type",
+            "type": "string"
+          },
+          {
+            "key": "ts",
+            "type": "string"
+          },
+          {
+            "key": "thread_ts",
+            "type": "string"
+          },
+          {
+            "key": "link",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "mention_received",
+        "fields": [
+          {
+            "key": "channel_id",
+            "options": []
+          },
+          {
+            "key": "user_id",
+            "options": []
+          },
+          {
+            "key": "gladys_user",
+            "options": []
+          },
+          {
+            "key": "text",
+            "options": []
+          }
+        ],
+        "variables": [
+          {
+            "key": "text",
+            "type": "string"
+          },
+          {
+            "key": "user_id",
+            "type": "string"
+          },
+          {
+            "key": "user_name",
+            "type": "string"
+          },
+          {
+            "key": "gladys_user",
+            "type": "string"
+          },
+          {
+            "key": "first_name",
+            "type": "string"
+          },
+          {
+            "key": "channel_id",
+            "type": "string"
+          },
+          {
+            "key": "ts",
+            "type": "string"
+          },
+          {
+            "key": "thread_ts",
+            "type": "string"
+          },
+          {
+            "key": "link",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "slash_command",
+        "fields": [
+          {
+            "key": "channel_id",
+            "options": []
+          },
+          {
+            "key": "user_id",
+            "options": []
+          },
+          {
+            "key": "gladys_user",
+            "options": []
+          },
+          {
+            "key": "text",
+            "options": []
+          }
+        ],
+        "variables": [
+          {
+            "key": "text",
+            "type": "string"
+          },
+          {
+            "key": "command",
+            "type": "string"
+          },
+          {
+            "key": "user_id",
+            "type": "string"
+          },
+          {
+            "key": "user_name",
+            "type": "string"
+          },
+          {
+            "key": "gladys_user",
+            "type": "string"
+          },
+          {
+            "key": "first_name",
+            "type": "string"
+          },
+          {
+            "key": "channel_id",
+            "type": "string"
+          },
+          {
+            "key": "channel_name",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "message_not_sent",
+        "fields": [
+          {
+            "key": "reason",
+            "options": ["auth", "permission", "target", "rate_limited", "network", "other"]
+          },
+          {
+            "key": "gladys_user",
+            "options": []
+          }
+        ],
+        "variables": [
+          {
+            "key": "target",
+            "type": "string"
+          },
+          {
+            "key": "gladys_user",
+            "type": "string"
+          },
+          {
+            "key": "first_name",
+            "type": "string"
+          },
+          {
+            "key": "reason",
+            "type": "string"
+          },
+          {
+            "key": "error",
+            "type": "string"
+          }
+        ]
+      }
+    ],
+    "scene_actions": [
+      {
+        "key": "send_message",
+        "fields": ["target", "text", "thread_ts"],
+        "options": {},
+        "outputs": [
+          {
+            "key": "ts",
+            "type": "string"
+          },
+          {
+            "key": "channel_id",
+            "type": "string"
+          },
+          {
+            "key": "link",
+            "type": "string"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,1176 @@
+{
+  "manifest_version": 1,
+  "type": "communication",
+  "name": "Slack",
+  "description": {
+    "en": "Talk to Gladys on Slack: a bot in your workspace, scenes and alerts, no public URL needed.",
+    "fr": "Discutez avec Gladys sur Slack : un robot dans votre espace, des scènes, sans URL publique.",
+    "de": "Mit Gladys auf Slack chatten: ein Bot in deinem Workspace, Szenen, ohne öffentliche URL.",
+    "es": "Hable con Gladys en Slack: un bot en su espacio de trabajo, escenas, sin URL pública."
+  },
+  "version": "0.1.0",
+  "docker_image": "ghcr.io/william-de71/gladys-slack:0.1.0",
+  "gladys_version": ">=5.1.0",
+  "categories": ["notifications", "assistants"],
+  "transports": ["cloud"],
+  "cover_image": "https://raw.githubusercontent.com/William-De71/gladys-slack/main/cover.jpg",
+  "messaging": {
+    "receive": true
+  },
+  "config_schema": [
+    {
+      "key": "intro",
+      "type": "section",
+      "label": {
+        "en": "Create the Slack app",
+        "fr": "Créer l’app Slack",
+        "de": "Slack-App erstellen",
+        "es": "Crear la app de Slack"
+      },
+      "description": {
+        "en": "Unofficial integration, not affiliated with Slack Technologies. 1. Open “Create the Gladys app in Slack” below, choose your workspace and confirm: the app comes with Socket Mode, so Gladys needs no public URL. 2. Basic Information → App-Level Tokens → Generate Token and Scopes, add the connections:write scope, copy the xapp- token. 3. Install App → Install to Workspace, then copy the Bot User OAuth Token (xoxb-). 4. Paste both tokens below and save.",
+        "fr": "Intégration non officielle, sans lien avec Slack Technologies. 1. Ouvrez « Créer l’app Gladys dans Slack » ci-dessous, choisissez votre espace de travail et confirmez : l’app utilise le Socket Mode, Gladys n’a donc besoin d’aucune URL publique. 2. Basic Information → App-Level Tokens → Generate Token and Scopes, ajoutez la portée connections:write, copiez le jeton xapp-. 3. Install App → Install to Workspace, puis copiez le Bot User OAuth Token (xoxb-). 4. Collez les deux jetons ci-dessous et enregistrez.",
+        "de": "Inoffizielle Integration, ohne Verbindung zu Slack Technologies. 1. Öffne unten „Gladys-App in Slack erstellen“, wähle deinen Workspace und bestätige: Die App nutzt den Socket Mode, Gladys braucht also keine öffentliche URL. 2. Basic Information → App-Level Tokens → Generate Token and Scopes, füge den Scope connections:write hinzu und kopiere das xapp-Token. 3. Install App → Install to Workspace, dann das Bot User OAuth Token (xoxb-) kopieren. 4. Beide Tokens unten einfügen und speichern.",
+        "es": "Integración no oficial, sin relación con Slack Technologies. 1. Abra «Crear la app Gladys en Slack» más abajo, elija su espacio de trabajo y confirme: la app usa Socket Mode, así que Gladys no necesita ninguna URL pública. 2. Basic Information → App-Level Tokens → Generate Token and Scopes, añada el permiso connections:write y copie el token xapp-. 3. Install App → Install to Workspace y copie el Bot User OAuth Token (xoxb-). 4. Pegue los dos tokens abajo y guarde."
+      },
+      "links": [
+        {
+          "url": "https://api.slack.com/apps?new_app=1&manifest_json=%7B%22_metadata%22%3A%7B%22major_version%22%3A1%7D%2C%22display_information%22%3A%7B%22name%22%3A%22Gladys%22%2C%22description%22%3A%22Gladys%20Assistant%2C%20the%20home%20automation%20assistant%20of%20the%20house.%22%2C%22background_color%22%3A%22%232f6fb5%22%7D%2C%22features%22%3A%7B%22app_home%22%3A%7B%22home_tab_enabled%22%3Afalse%2C%22messages_tab_enabled%22%3Atrue%2C%22messages_tab_read_only_enabled%22%3Afalse%7D%2C%22bot_user%22%3A%7B%22display_name%22%3A%22gladys%22%2C%22always_online%22%3Atrue%7D%2C%22slash_commands%22%3A%5B%7B%22command%22%3A%22%2Fgladys%22%2C%22description%22%3A%22Talk%20to%20Gladys%2C%20or%20send%20a%20link%20code%22%2C%22usage_hint%22%3A%22turn%20on%20the%20kitchen%20light%22%2C%22should_escape%22%3Afalse%7D%5D%7D%2C%22oauth_config%22%3A%7B%22scopes%22%3A%7B%22bot%22%3A%5B%22app_mentions%3Aread%22%2C%22channels%3Ahistory%22%2C%22channels%3Aread%22%2C%22chat%3Awrite%22%2C%22commands%22%2C%22files%3Awrite%22%2C%22groups%3Ahistory%22%2C%22groups%3Aread%22%2C%22im%3Ahistory%22%2C%22im%3Awrite%22%2C%22users%3Aread%22%5D%7D%7D%2C%22settings%22%3A%7B%22event_subscriptions%22%3A%7B%22bot_events%22%3A%5B%22app_mention%22%2C%22message.channels%22%2C%22message.groups%22%2C%22message.im%22%5D%7D%2C%22org_deploy_enabled%22%3Afalse%2C%22socket_mode_enabled%22%3Atrue%2C%22token_rotation_enabled%22%3Afalse%7D%7D",
+          "label": {
+            "en": "Create the Gladys app in Slack",
+            "fr": "Créer l’app Gladys dans Slack",
+            "de": "Gladys-App in Slack erstellen",
+            "es": "Crear la app Gladys en Slack"
+          }
+        },
+        {
+          "url": "https://api.slack.com/apps",
+          "label": {
+            "en": "Your Slack apps",
+            "fr": "Vos apps Slack",
+            "de": "Deine Slack-Apps",
+            "es": "Sus apps de Slack"
+          }
+        },
+        {
+          "url": "https://github.com/William-De71/gladys-slack/blob/main/slack-app-manifest.json",
+          "label": {
+            "en": "Slack app manifest",
+            "fr": "Manifeste de l’app Slack",
+            "de": "Manifest der Slack-App",
+            "es": "Manifiesto de la app de Slack"
+          }
+        }
+      ]
+    },
+    {
+      "key": "bot_token",
+      "type": "secret",
+      "required": true,
+      "label": {
+        "en": "Bot token",
+        "fr": "Jeton du robot",
+        "de": "Bot-Token",
+        "es": "Token del bot"
+      },
+      "description": {
+        "en": "OAuth & Permissions → Bot User OAuth Token. Stored encrypted, never shown again.",
+        "fr": "OAuth & Permissions → Bot User OAuth Token. Stocké chiffré, il n’est plus jamais affiché.",
+        "de": "OAuth & Permissions → Bot User OAuth Token. Wird verschlüsselt gespeichert und nie wieder angezeigt.",
+        "es": "OAuth & Permissions → Bot User OAuth Token. Se guarda cifrado y no se vuelve a mostrar."
+      },
+      "placeholder": {
+        "en": "xoxb-…",
+        "fr": "xoxb-…",
+        "de": "xoxb-…",
+        "es": "xoxb-…"
+      }
+    },
+    {
+      "key": "app_token",
+      "type": "secret",
+      "required": true,
+      "label": {
+        "en": "App-level token",
+        "fr": "Jeton d’application",
+        "de": "App-Level-Token",
+        "es": "Token de aplicación"
+      },
+      "description": {
+        "en": "Basic Information → App-Level Tokens, with the connections:write scope: it opens the Socket Mode connection.",
+        "fr": "Basic Information → App-Level Tokens, avec la portée connections:write : il ouvre la connexion Socket Mode.",
+        "de": "Basic Information → App-Level Tokens, mit dem Scope connections:write: Es öffnet die Socket-Mode-Verbindung.",
+        "es": "Basic Information → App-Level Tokens, con el permiso connections:write: abre la conexión de Socket Mode."
+      },
+      "placeholder": {
+        "en": "xapp-…",
+        "fr": "xapp-…",
+        "de": "xapp-…",
+        "es": "xapp-…"
+      }
+    },
+    {
+      "key": "link_help",
+      "type": "section",
+      "label": {
+        "en": "Talk with Gladys",
+        "fr": "Discuter avec Gladys",
+        "de": "Mit Gladys schreiben",
+        "es": "Hablar con Gladys"
+      },
+      "description": {
+        "en": "Each user links their Slack account once: “Link my account” below → “Generate a link code”, then send the code to @gladys in a direct message (Slack → Apps → Gladys → Messages), or type /gladys followed by the code. Then everything they write to @gladys goes to Gladys, who answers there. Members who are not linked only get an invitation to link.",
+        "fr": "Chaque utilisateur lie une fois son compte Slack : « Lier mon compte » ci-dessous → « Générer un code de liaison », puis envoyez le code à @gladys en message privé (Slack → Apps → Gladys → Messages), ou tapez /gladys suivi du code. Ensuite, tout ce qu’il écrit à @gladys va à Gladys, qui répond au même endroit. Les membres non liés reçoivent seulement une invitation à se lier.",
+        "de": "Jeder Benutzer verknüpft sein Slack-Konto einmal: „Mein Konto verknüpfen“ unten → „Verknüpfungscode generieren“, dann den Code per Direktnachricht an @gladys senden (Slack → Apps → Gladys → Nachrichten) oder /gladys gefolgt vom Code eingeben. Danach geht alles, was er @gladys schreibt, an Gladys, die dort antwortet. Nicht verknüpfte Mitglieder erhalten nur eine Einladung zum Verknüpfen.",
+        "es": "Cada usuario vincula una vez su cuenta de Slack: «Vincular mi cuenta» más abajo → «Generar un código de vinculación» y envíe el código a @gladys por mensaje directo (Slack → Aplicaciones → Gladys → Mensajes), o escriba /gladys seguido del código. Después, todo lo que escriba a @gladys llega a Gladys, que responde allí. Los miembros no vinculados solo reciben una invitación a vincularse."
+      }
+    },
+    {
+      "key": "forward_direct_messages",
+      "type": "boolean",
+      "default": true,
+      "label": {
+        "en": "Send direct messages to Gladys",
+        "fr": "Envoyer les messages privés à Gladys",
+        "de": "Direktnachrichten an Gladys senden",
+        "es": "Enviar los mensajes directos a Gladys"
+      },
+      "description": {
+        "en": "Off: messages and /gladys commands of linked members only reach the scenes, Gladys does not answer them.",
+        "fr": "Désactivé : les messages et les commandes /gladys des membres liés n’atteignent que les scènes, Gladys n’y répond pas.",
+        "de": "Aus: Nachrichten und /gladys-Befehle verknüpfter Mitglieder erreichen nur die Szenen, Gladys antwortet nicht darauf.",
+        "es": "Desactivado: los mensajes y los comandos /gladys de los miembros vinculados solo llegan a las escenas, Gladys no los responde."
+      }
+    },
+    {
+      "key": "channels_help",
+      "type": "section",
+      "label": {
+        "en": "Channels and scenes",
+        "fr": "Canaux et scènes",
+        "de": "Kanäle und Szenen",
+        "es": "Canales y escenas"
+      },
+      "description": {
+        "en": "The bot only sees the channels it was invited to: type /invite @gladys in a channel. Its messages, the mentions of @gladys and /gladys then trigger scenes, for linked members only. The ID of a channel is at the bottom of its details (About tab): C… for a public channel, G… or C… for a private one.",
+        "fr": "Le robot ne voit que les canaux où il a été invité : tapez /invite @gladys dans un canal. Ses messages, les mentions de @gladys et /gladys déclenchent alors des scènes, pour les membres liés uniquement. L’identifiant d’un canal est tout en bas de ses détails (onglet À propos) : C… pour un canal public, G… ou C… pour un canal privé.",
+        "de": "Der Bot sieht nur die Kanäle, in die er eingeladen wurde: Gib /invite @gladys in einem Kanal ein. Dessen Nachrichten, Erwähnungen von @gladys und /gladys lösen dann Szenen aus, nur für verknüpfte Mitglieder. Die ID eines Kanals steht ganz unten in seinen Details (Tab Info): C… für einen öffentlichen Kanal, G… oder C… für einen privaten.",
+        "es": "El bot solo ve los canales a los que se le ha invitado: escriba /invite @gladys en un canal. Sus mensajes, las menciones de @gladys y /gladys activan entonces escenas, solo para los miembros vinculados. El identificador de un canal está al final de sus detalles (pestaña Información): C… para un canal público, G… o C… para uno privado."
+      }
+    },
+    {
+      "key": "default_channel",
+      "type": "string",
+      "label": {
+        "en": "Default channel",
+        "fr": "Canal par défaut",
+        "de": "Standardkanal",
+        "es": "Canal por defecto"
+      },
+      "description": {
+        "en": "Optional. Where the “Send a Slack message” scene action and the test button post when no target is given: a channel ID (invite the bot first) or a member ID.",
+        "fr": "Facultatif. Où l’action de scène « Envoyer un message Slack » et le bouton de test publient sans cible indiquée : un identifiant de canal (invitez d’abord le robot) ou de membre.",
+        "de": "Optional. Wohin die Szenenaktion „Slack-Nachricht senden“ und die Test-Schaltfläche ohne angegebenes Ziel posten: eine Kanal-ID (lade den Bot zuerst ein) oder eine Mitglieds-ID.",
+        "es": "Opcional. Dónde publican la acción de escena «Enviar un mensaje de Slack» y el botón de prueba cuando no se indica destino: un identificador de canal (invite primero al bot) o de miembro."
+      },
+      "placeholder": {
+        "en": "e.g. C0123456789",
+        "fr": "ex. C0123456789",
+        "de": "z. B. C0123456789",
+        "es": "p. ej. C0123456789"
+      }
+    },
+    {
+      "key": "language",
+      "type": "select",
+      "default": "auto",
+      "label": {
+        "en": "Language of the bot",
+        "fr": "Langue du robot",
+        "de": "Sprache des Bots",
+        "es": "Idioma del bot"
+      },
+      "description": {
+        "en": "Language of the few texts the bot writes itself to members Gladys does not know yet (invitation, refused code) and of the test message.",
+        "fr": "Langue des quelques textes que le robot écrit lui-même aux membres que Gladys ne connaît pas encore (invitation, code refusé) et du message de test.",
+        "de": "Sprache der wenigen Texte, die der Bot selbst an Mitglieder schreibt, die Gladys noch nicht kennt (Einladung, abgelehnter Code), und der Testnachricht.",
+        "es": "Idioma de los pocos textos que el bot escribe por sí mismo a los miembros que Gladys aún no conoce (invitación, código rechazado) y del mensaje de prueba."
+      },
+      "options": [
+        {
+          "value": "auto",
+          "label": {
+            "en": "Automatic (language of the dashboard)",
+            "fr": "Automatique (langue du tableau de bord)",
+            "de": "Automatisch (Sprache des Dashboards)",
+            "es": "Automático (idioma del panel)"
+          }
+        },
+        {
+          "value": "en",
+          "label": {
+            "en": "English",
+            "fr": "Anglais",
+            "de": "Englisch",
+            "es": "Inglés"
+          }
+        },
+        {
+          "value": "fr",
+          "label": {
+            "en": "French",
+            "fr": "Français",
+            "de": "Französisch",
+            "es": "Francés"
+          }
+        },
+        {
+          "value": "de",
+          "label": {
+            "en": "German",
+            "fr": "Allemand",
+            "de": "Deutsch",
+            "es": "Alemán"
+          }
+        },
+        {
+          "value": "es",
+          "label": {
+            "en": "Spanish",
+            "fr": "Espagnol",
+            "de": "Spanisch",
+            "es": "Español"
+          }
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "key": "test_connection",
+      "timeout_seconds": 30,
+      "label": {
+        "en": "Test the connection",
+        "fr": "Tester la connexion",
+        "de": "Verbindung testen",
+        "es": "Probar la conexión"
+      },
+      "description": {
+        "en": "Checks the bot token, the Socket Mode connection and the default channel, and counts the linked members.",
+        "fr": "Vérifie le jeton du robot, la connexion Socket Mode et le canal par défaut, et compte les membres liés.",
+        "de": "Prüft das Bot-Token, die Socket-Mode-Verbindung und den Standardkanal und zählt die verknüpften Mitglieder.",
+        "es": "Comprueba el token del bot, la conexión de Socket Mode y el canal por defecto, y cuenta los miembros vinculados."
+      }
+    }
+  ],
+  "scene_triggers": [
+    {
+      "key": "message_received",
+      "label": {
+        "en": "Slack message received",
+        "fr": "Message Slack reçu",
+        "de": "Slack-Nachricht empfangen",
+        "es": "Mensaje de Slack recibido"
+      },
+      "description": {
+        "en": "A linked member wrote to the bot in a direct message, or in a channel the bot was invited to. Direct messages also go to Gladys as usual.",
+        "fr": "Un membre lié a écrit au robot en message privé, ou dans un canal où le robot a été invité. Les messages privés vont aussi à Gladys comme d’habitude.",
+        "de": "Ein verknüpftes Mitglied hat dem Bot eine Direktnachricht geschrieben oder in einem Kanal, in den der Bot eingeladen wurde. Direktnachrichten gehen wie gewohnt auch an Gladys.",
+        "es": "Un miembro vinculado ha escrito al bot por mensaje directo, o en un canal al que se invitó al bot. Los mensajes directos también llegan a Gladys como siempre."
+      },
+      "fields": [
+        {
+          "key": "channel_type",
+          "type": "select",
+          "label": {
+            "en": "Where",
+            "fr": "Où",
+            "de": "Wo",
+            "es": "Dónde"
+          },
+          "description": {
+            "en": "Leave empty for any.",
+            "fr": "Laissez vide pour n’importe lequel.",
+            "de": "Leer lassen für beliebige.",
+            "es": "Déjelo vacío para cualquiera."
+          },
+          "options": [
+            {
+              "value": "im",
+              "label": {
+                "en": "Direct message to the bot",
+                "fr": "Message privé au robot",
+                "de": "Direktnachricht an den Bot",
+                "es": "Mensaje directo al bot"
+              }
+            },
+            {
+              "value": "channel",
+              "label": {
+                "en": "Public channel",
+                "fr": "Canal public",
+                "de": "Öffentlicher Kanal",
+                "es": "Canal público"
+              }
+            },
+            {
+              "value": "group",
+              "label": {
+                "en": "Private channel",
+                "fr": "Canal privé",
+                "de": "Privater Kanal",
+                "es": "Canal privado"
+              }
+            }
+          ]
+        },
+        {
+          "key": "channel_id",
+          "type": "string",
+          "label": {
+            "en": "Channel ID",
+            "fr": "Identifiant du canal",
+            "de": "Kanal-ID",
+            "es": "Identificador del canal"
+          },
+          "description": {
+            "en": "C… or G… (channel details → About, at the bottom). Leave empty for any channel.",
+            "fr": "C… ou G… (détails du canal → À propos, tout en bas). Laissez vide pour n’importe quel canal.",
+            "de": "C… oder G… (Kanaldetails → Info, ganz unten). Leer lassen für jeden Kanal.",
+            "es": "C… o G… (detalles del canal → Información, al final). Déjelo vacío para cualquier canal."
+          },
+          "placeholder": {
+            "en": "e.g. C0123456789",
+            "fr": "ex. C0123456789",
+            "de": "z. B. C0123456789",
+            "es": "p. ej. C0123456789"
+          }
+        },
+        {
+          "key": "user_id",
+          "type": "string",
+          "label": {
+            "en": "Slack member ID",
+            "fr": "Identifiant du membre Slack",
+            "de": "Slack-Mitglieds-ID",
+            "es": "Identificador del miembro de Slack"
+          },
+          "description": {
+            "en": "U… (profile → ⋮ → Copy member ID). Leave empty for any linked member.",
+            "fr": "U… (profil → ⋮ → Copier l’identifiant de membre). Laissez vide pour n’importe quel membre lié.",
+            "de": "U… (Profil → ⋮ → Mitglieds-ID kopieren). Leer lassen für jedes verknüpfte Mitglied.",
+            "es": "U… (perfil → ⋮ → Copiar ID de miembro). Déjelo vacío para cualquier miembro vinculado."
+          },
+          "placeholder": {
+            "en": "e.g. U0123456789",
+            "fr": "ex. U0123456789",
+            "de": "z. B. U0123456789",
+            "es": "p. ej. U0123456789"
+          }
+        },
+        {
+          "key": "gladys_user",
+          "type": "string",
+          "label": {
+            "en": "Gladys user (selector)",
+            "fr": "Utilisateur Gladys (sélecteur)",
+            "de": "Gladys-Benutzer (Selektor)",
+            "es": "Usuario de Gladys (selector)"
+          },
+          "description": {
+            "en": "The selector of the user in Gladys, e.g. john. Leave empty for any.",
+            "fr": "Le sélecteur de l’utilisateur dans Gladys, ex. john. Laissez vide pour n’importe lequel.",
+            "de": "Der Selektor des Benutzers in Gladys, z. B. john. Leer lassen für beliebige.",
+            "es": "El selector del usuario en Gladys, p. ej. john. Déjelo vacío para cualquiera."
+          }
+        },
+        {
+          "key": "text",
+          "type": "string",
+          "label": {
+            "en": "Exact text",
+            "fr": "Texte exact",
+            "de": "Genauer Text",
+            "es": "Texto exacto"
+          },
+          "description": {
+            "en": "Only a message of exactly this text (same case). Leave empty for any message.",
+            "fr": "Uniquement un message de ce texte exact (mêmes majuscules). Laissez vide pour tout message.",
+            "de": "Nur eine Nachricht mit genau diesem Text (gleiche Groß-/Kleinschreibung). Leer lassen für jede Nachricht.",
+            "es": "Solo un mensaje con este texto exacto (mismas mayúsculas). Déjelo vacío para cualquier mensaje."
+          }
+        }
+      ],
+      "variables": [
+        {
+          "key": "text",
+          "type": "string",
+          "label": {
+            "en": "Text of the message",
+            "fr": "Texte du message",
+            "de": "Text der Nachricht",
+            "es": "Texto del mensaje"
+          }
+        },
+        {
+          "key": "user_id",
+          "type": "string",
+          "label": {
+            "en": "Slack member ID",
+            "fr": "Identifiant du membre Slack",
+            "de": "Slack-Mitglieds-ID",
+            "es": "Identificador del miembro de Slack"
+          }
+        },
+        {
+          "key": "user_name",
+          "type": "string",
+          "label": {
+            "en": "Name of the member",
+            "fr": "Nom du membre",
+            "de": "Name des Mitglieds",
+            "es": "Nombre del miembro"
+          }
+        },
+        {
+          "key": "gladys_user",
+          "type": "string",
+          "label": {
+            "en": "Gladys user (selector)",
+            "fr": "Utilisateur Gladys (sélecteur)",
+            "de": "Gladys-Benutzer (Selektor)",
+            "es": "Usuario de Gladys (selector)"
+          }
+        },
+        {
+          "key": "first_name",
+          "type": "string",
+          "label": {
+            "en": "First name in Gladys",
+            "fr": "Prénom dans Gladys",
+            "de": "Vorname in Gladys",
+            "es": "Nombre en Gladys"
+          }
+        },
+        {
+          "key": "channel_id",
+          "type": "string",
+          "label": {
+            "en": "Channel ID",
+            "fr": "Identifiant du canal",
+            "de": "Kanal-ID",
+            "es": "Identificador del canal"
+          }
+        },
+        {
+          "key": "channel_type",
+          "type": "string",
+          "label": {
+            "en": "Conversation type",
+            "fr": "Type de conversation",
+            "de": "Art der Unterhaltung",
+            "es": "Tipo de conversación"
+          }
+        },
+        {
+          "key": "ts",
+          "type": "string",
+          "label": {
+            "en": "Message ts",
+            "fr": "ts du message",
+            "de": "ts der Nachricht",
+            "es": "ts del mensaje"
+          }
+        },
+        {
+          "key": "thread_ts",
+          "type": "string",
+          "label": {
+            "en": "Thread ts",
+            "fr": "ts du fil",
+            "de": "ts des Threads",
+            "es": "ts del hilo"
+          }
+        },
+        {
+          "key": "link",
+          "type": "string",
+          "label": {
+            "en": "Link to the message",
+            "fr": "Lien vers le message",
+            "de": "Link zur Nachricht",
+            "es": "Enlace al mensaje"
+          }
+        }
+      ]
+    },
+    {
+      "key": "mention_received",
+      "label": {
+        "en": "Gladys mentioned on Slack",
+        "fr": "Gladys mentionnée sur Slack",
+        "de": "Gladys auf Slack erwähnt",
+        "es": "Gladys mencionada en Slack"
+      },
+      "description": {
+        "en": "A linked member mentioned @gladys in a channel. The text has the mention removed.",
+        "fr": "Un membre lié a mentionné @gladys dans un canal. Le texte est sans la mention.",
+        "de": "Ein verknüpftes Mitglied hat @gladys in einem Kanal erwähnt. Der Text ist ohne die Erwähnung.",
+        "es": "Un miembro vinculado ha mencionado a @gladys en un canal. El texto va sin la mención."
+      },
+      "fields": [
+        {
+          "key": "channel_id",
+          "type": "string",
+          "label": {
+            "en": "Channel ID",
+            "fr": "Identifiant du canal",
+            "de": "Kanal-ID",
+            "es": "Identificador del canal"
+          },
+          "description": {
+            "en": "C… or G… (channel details → About, at the bottom). Leave empty for any channel.",
+            "fr": "C… ou G… (détails du canal → À propos, tout en bas). Laissez vide pour n’importe quel canal.",
+            "de": "C… oder G… (Kanaldetails → Info, ganz unten). Leer lassen für jeden Kanal.",
+            "es": "C… o G… (detalles del canal → Información, al final). Déjelo vacío para cualquier canal."
+          },
+          "placeholder": {
+            "en": "e.g. C0123456789",
+            "fr": "ex. C0123456789",
+            "de": "z. B. C0123456789",
+            "es": "p. ej. C0123456789"
+          }
+        },
+        {
+          "key": "user_id",
+          "type": "string",
+          "label": {
+            "en": "Slack member ID",
+            "fr": "Identifiant du membre Slack",
+            "de": "Slack-Mitglieds-ID",
+            "es": "Identificador del miembro de Slack"
+          },
+          "description": {
+            "en": "U… (profile → ⋮ → Copy member ID). Leave empty for any linked member.",
+            "fr": "U… (profil → ⋮ → Copier l’identifiant de membre). Laissez vide pour n’importe quel membre lié.",
+            "de": "U… (Profil → ⋮ → Mitglieds-ID kopieren). Leer lassen für jedes verknüpfte Mitglied.",
+            "es": "U… (perfil → ⋮ → Copiar ID de miembro). Déjelo vacío para cualquier miembro vinculado."
+          },
+          "placeholder": {
+            "en": "e.g. U0123456789",
+            "fr": "ex. U0123456789",
+            "de": "z. B. U0123456789",
+            "es": "p. ej. U0123456789"
+          }
+        },
+        {
+          "key": "gladys_user",
+          "type": "string",
+          "label": {
+            "en": "Gladys user (selector)",
+            "fr": "Utilisateur Gladys (sélecteur)",
+            "de": "Gladys-Benutzer (Selektor)",
+            "es": "Usuario de Gladys (selector)"
+          },
+          "description": {
+            "en": "The selector of the user in Gladys, e.g. john. Leave empty for any.",
+            "fr": "Le sélecteur de l’utilisateur dans Gladys, ex. john. Laissez vide pour n’importe lequel.",
+            "de": "Der Selektor des Benutzers in Gladys, z. B. john. Leer lassen für beliebige.",
+            "es": "El selector del usuario en Gladys, p. ej. john. Déjelo vacío para cualquiera."
+          }
+        },
+        {
+          "key": "text",
+          "type": "string",
+          "label": {
+            "en": "Exact text",
+            "fr": "Texte exact",
+            "de": "Genauer Text",
+            "es": "Texto exacto"
+          },
+          "description": {
+            "en": "Only a mention followed by exactly this text, e.g. “lights off”. Leave empty for any mention.",
+            "fr": "Uniquement une mention suivie de ce texte exact, ex. « éteins tout ». Laissez vide pour toute mention.",
+            "de": "Nur eine Erwähnung gefolgt von genau diesem Text, z. B. „Licht aus“. Leer lassen für jede Erwähnung.",
+            "es": "Solo una mención seguida de este texto exacto, p. ej. «apaga todo». Déjelo vacío para cualquier mención."
+          }
+        }
+      ],
+      "variables": [
+        {
+          "key": "text",
+          "type": "string",
+          "label": {
+            "en": "Text after the mention",
+            "fr": "Texte après la mention",
+            "de": "Text nach der Erwähnung",
+            "es": "Texto tras la mención"
+          }
+        },
+        {
+          "key": "user_id",
+          "type": "string",
+          "label": {
+            "en": "Slack member ID",
+            "fr": "Identifiant du membre Slack",
+            "de": "Slack-Mitglieds-ID",
+            "es": "Identificador del miembro de Slack"
+          }
+        },
+        {
+          "key": "user_name",
+          "type": "string",
+          "label": {
+            "en": "Name of the member",
+            "fr": "Nom du membre",
+            "de": "Name des Mitglieds",
+            "es": "Nombre del miembro"
+          }
+        },
+        {
+          "key": "gladys_user",
+          "type": "string",
+          "label": {
+            "en": "Gladys user (selector)",
+            "fr": "Utilisateur Gladys (sélecteur)",
+            "de": "Gladys-Benutzer (Selektor)",
+            "es": "Usuario de Gladys (selector)"
+          }
+        },
+        {
+          "key": "first_name",
+          "type": "string",
+          "label": {
+            "en": "First name in Gladys",
+            "fr": "Prénom dans Gladys",
+            "de": "Vorname in Gladys",
+            "es": "Nombre en Gladys"
+          }
+        },
+        {
+          "key": "channel_id",
+          "type": "string",
+          "label": {
+            "en": "Channel ID",
+            "fr": "Identifiant du canal",
+            "de": "Kanal-ID",
+            "es": "Identificador del canal"
+          }
+        },
+        {
+          "key": "ts",
+          "type": "string",
+          "label": {
+            "en": "Message ts",
+            "fr": "ts du message",
+            "de": "ts der Nachricht",
+            "es": "ts del mensaje"
+          }
+        },
+        {
+          "key": "thread_ts",
+          "type": "string",
+          "label": {
+            "en": "Thread ts",
+            "fr": "ts du fil",
+            "de": "ts des Threads",
+            "es": "ts del hilo"
+          }
+        },
+        {
+          "key": "link",
+          "type": "string",
+          "label": {
+            "en": "Link to the message",
+            "fr": "Lien vers le message",
+            "de": "Link zur Nachricht",
+            "es": "Enlace al mensaje"
+          }
+        }
+      ]
+    },
+    {
+      "key": "slash_command",
+      "label": {
+        "en": "/gladys command typed",
+        "fr": "Commande /gladys tapée",
+        "de": "/gladys-Befehl eingegeben",
+        "es": "Comando /gladys escrito"
+      },
+      "description": {
+        "en": "A linked member typed /gladys followed by a text, in any conversation. Only they see the answer of the bot.",
+        "fr": "Un membre lié a tapé /gladys suivi d’un texte, dans n’importe quelle conversation. Lui seul voit la réponse du robot.",
+        "de": "Ein verknüpftes Mitglied hat /gladys gefolgt von einem Text eingegeben, in einer beliebigen Unterhaltung. Nur es sieht die Antwort des Bots.",
+        "es": "Un miembro vinculado ha escrito /gladys seguido de un texto, en cualquier conversación. Solo él ve la respuesta del bot."
+      },
+      "fields": [
+        {
+          "key": "channel_id",
+          "type": "string",
+          "label": {
+            "en": "Channel ID",
+            "fr": "Identifiant du canal",
+            "de": "Kanal-ID",
+            "es": "Identificador del canal"
+          },
+          "description": {
+            "en": "C… or G… (channel details → About, at the bottom). Leave empty for any channel.",
+            "fr": "C… ou G… (détails du canal → À propos, tout en bas). Laissez vide pour n’importe quel canal.",
+            "de": "C… oder G… (Kanaldetails → Info, ganz unten). Leer lassen für jeden Kanal.",
+            "es": "C… o G… (detalles del canal → Información, al final). Déjelo vacío para cualquier canal."
+          },
+          "placeholder": {
+            "en": "e.g. C0123456789",
+            "fr": "ex. C0123456789",
+            "de": "z. B. C0123456789",
+            "es": "p. ej. C0123456789"
+          }
+        },
+        {
+          "key": "user_id",
+          "type": "string",
+          "label": {
+            "en": "Slack member ID",
+            "fr": "Identifiant du membre Slack",
+            "de": "Slack-Mitglieds-ID",
+            "es": "Identificador del miembro de Slack"
+          },
+          "description": {
+            "en": "U… (profile → ⋮ → Copy member ID). Leave empty for any linked member.",
+            "fr": "U… (profil → ⋮ → Copier l’identifiant de membre). Laissez vide pour n’importe quel membre lié.",
+            "de": "U… (Profil → ⋮ → Mitglieds-ID kopieren). Leer lassen für jedes verknüpfte Mitglied.",
+            "es": "U… (perfil → ⋮ → Copiar ID de miembro). Déjelo vacío para cualquier miembro vinculado."
+          },
+          "placeholder": {
+            "en": "e.g. U0123456789",
+            "fr": "ex. U0123456789",
+            "de": "z. B. U0123456789",
+            "es": "p. ej. U0123456789"
+          }
+        },
+        {
+          "key": "gladys_user",
+          "type": "string",
+          "label": {
+            "en": "Gladys user (selector)",
+            "fr": "Utilisateur Gladys (sélecteur)",
+            "de": "Gladys-Benutzer (Selektor)",
+            "es": "Usuario de Gladys (selector)"
+          },
+          "description": {
+            "en": "The selector of the user in Gladys, e.g. john. Leave empty for any.",
+            "fr": "Le sélecteur de l’utilisateur dans Gladys, ex. john. Laissez vide pour n’importe lequel.",
+            "de": "Der Selektor des Benutzers in Gladys, z. B. john. Leer lassen für beliebige.",
+            "es": "El selector del usuario en Gladys, p. ej. john. Déjelo vacío para cualquiera."
+          }
+        },
+        {
+          "key": "text",
+          "type": "string",
+          "label": {
+            "en": "Exact text",
+            "fr": "Texte exact",
+            "de": "Genauer Text",
+            "es": "Texto exacto"
+          },
+          "description": {
+            "en": "Only /gladys followed by exactly this text, e.g. “goodnight”. Leave empty for any.",
+            "fr": "Uniquement /gladys suivi de ce texte exact, ex. « bonne nuit ». Laissez vide pour n’importe lequel.",
+            "de": "Nur /gladys gefolgt von genau diesem Text, z. B. „gute Nacht“. Leer lassen für beliebige.",
+            "es": "Solo /gladys seguido de este texto exacto, p. ej. «buenas noches». Déjelo vacío para cualquiera."
+          }
+        }
+      ],
+      "variables": [
+        {
+          "key": "text",
+          "type": "string",
+          "label": {
+            "en": "Text after /gladys",
+            "fr": "Texte après /gladys",
+            "de": "Text nach /gladys",
+            "es": "Texto tras /gladys"
+          }
+        },
+        {
+          "key": "command",
+          "type": "string",
+          "label": {
+            "en": "Command",
+            "fr": "Commande",
+            "de": "Befehl",
+            "es": "Comando"
+          }
+        },
+        {
+          "key": "user_id",
+          "type": "string",
+          "label": {
+            "en": "Slack member ID",
+            "fr": "Identifiant du membre Slack",
+            "de": "Slack-Mitglieds-ID",
+            "es": "Identificador del miembro de Slack"
+          }
+        },
+        {
+          "key": "user_name",
+          "type": "string",
+          "label": {
+            "en": "Name of the member",
+            "fr": "Nom du membre",
+            "de": "Name des Mitglieds",
+            "es": "Nombre del miembro"
+          }
+        },
+        {
+          "key": "gladys_user",
+          "type": "string",
+          "label": {
+            "en": "Gladys user (selector)",
+            "fr": "Utilisateur Gladys (sélecteur)",
+            "de": "Gladys-Benutzer (Selektor)",
+            "es": "Usuario de Gladys (selector)"
+          }
+        },
+        {
+          "key": "first_name",
+          "type": "string",
+          "label": {
+            "en": "First name in Gladys",
+            "fr": "Prénom dans Gladys",
+            "de": "Vorname in Gladys",
+            "es": "Nombre en Gladys"
+          }
+        },
+        {
+          "key": "channel_id",
+          "type": "string",
+          "label": {
+            "en": "Channel ID",
+            "fr": "Identifiant du canal",
+            "de": "Kanal-ID",
+            "es": "Identificador del canal"
+          }
+        },
+        {
+          "key": "channel_name",
+          "type": "string",
+          "label": {
+            "en": "Channel name",
+            "fr": "Nom du canal",
+            "de": "Kanalname",
+            "es": "Nombre del canal"
+          }
+        }
+      ]
+    },
+    {
+      "key": "message_not_sent",
+      "label": {
+        "en": "Slack message not sent",
+        "fr": "Message Slack non envoyé",
+        "de": "Slack-Nachricht nicht gesendet",
+        "es": "Mensaje de Slack no enviado"
+      },
+      "description": {
+        "en": "Slack refused a message of Gladys to a member. Fires on the first failure for a member, then again only after a message to them went through: a scene warning you on Slack cannot loop.",
+        "fr": "Slack a refusé un message de Gladys à un membre. Se déclenche au premier échec pour un membre, puis seulement après qu’un message vers lui est de nouveau passé : une scène qui vous prévient sur Slack ne peut pas boucler.",
+        "de": "Slack hat eine Nachricht von Gladys an ein Mitglied abgelehnt. Löst beim ersten Fehler für ein Mitglied aus, danach erst wieder, nachdem eine Nachricht an es durchgegangen ist: Eine Szene, die dich auf Slack warnt, kann keine Schleife bilden.",
+        "es": "Slack ha rechazado un mensaje de Gladys a un miembro. Se activa con el primer fallo para un miembro y solo de nuevo después de que un mensaje hacia él haya pasado: una escena que le avisa en Slack no puede entrar en bucle."
+      },
+      "fields": [
+        {
+          "key": "reason",
+          "type": "select",
+          "label": {
+            "en": "Reason",
+            "fr": "Cause",
+            "de": "Ursache",
+            "es": "Causa"
+          },
+          "description": {
+            "en": "Leave empty for any reason.",
+            "fr": "Laissez vide pour n’importe quelle cause.",
+            "de": "Leer lassen für jede Ursache.",
+            "es": "Déjelo vacío para cualquier causa."
+          },
+          "options": [
+            {
+              "value": "auth",
+              "label": {
+                "en": "Bot token refused",
+                "fr": "Jeton du robot refusé",
+                "de": "Bot-Token abgelehnt",
+                "es": "Token del bot rechazado"
+              }
+            },
+            {
+              "value": "permission",
+              "label": {
+                "en": "Missing scope",
+                "fr": "Portée manquante",
+                "de": "Fehlender Scope",
+                "es": "Falta un permiso"
+              }
+            },
+            {
+              "value": "target",
+              "label": {
+                "en": "Member or conversation unreachable",
+                "fr": "Membre ou conversation injoignable",
+                "de": "Mitglied oder Unterhaltung nicht erreichbar",
+                "es": "Miembro o conversación inalcanzable"
+              }
+            },
+            {
+              "value": "rate_limited",
+              "label": {
+                "en": "Too many messages",
+                "fr": "Trop de messages",
+                "de": "Zu viele Nachrichten",
+                "es": "Demasiados mensajes"
+              }
+            },
+            {
+              "value": "network",
+              "label": {
+                "en": "Slack unreachable",
+                "fr": "Slack injoignable",
+                "de": "Slack nicht erreichbar",
+                "es": "Slack inalcanzable"
+              }
+            },
+            {
+              "value": "other",
+              "label": {
+                "en": "Other error",
+                "fr": "Autre erreur",
+                "de": "Anderer Fehler",
+                "es": "Otro error"
+              }
+            }
+          ]
+        },
+        {
+          "key": "gladys_user",
+          "type": "string",
+          "label": {
+            "en": "Gladys user (selector)",
+            "fr": "Utilisateur Gladys (sélecteur)",
+            "de": "Gladys-Benutzer (Selektor)",
+            "es": "Usuario de Gladys (selector)"
+          },
+          "description": {
+            "en": "The selector of the user in Gladys, e.g. john. Leave empty for any.",
+            "fr": "Le sélecteur de l’utilisateur dans Gladys, ex. john. Laissez vide pour n’importe lequel.",
+            "de": "Der Selektor des Benutzers in Gladys, z. B. john. Leer lassen für beliebige.",
+            "es": "El selector del usuario en Gladys, p. ej. john. Déjelo vacío para cualquiera."
+          }
+        }
+      ],
+      "variables": [
+        {
+          "key": "target",
+          "type": "string",
+          "label": {
+            "en": "Slack member ID",
+            "fr": "Identifiant du membre Slack",
+            "de": "Slack-Mitglieds-ID",
+            "es": "Identificador del miembro de Slack"
+          }
+        },
+        {
+          "key": "gladys_user",
+          "type": "string",
+          "label": {
+            "en": "Gladys user (selector)",
+            "fr": "Utilisateur Gladys (sélecteur)",
+            "de": "Gladys-Benutzer (Selektor)",
+            "es": "Usuario de Gladys (selector)"
+          }
+        },
+        {
+          "key": "first_name",
+          "type": "string",
+          "label": {
+            "en": "First name in Gladys",
+            "fr": "Prénom dans Gladys",
+            "de": "Vorname in Gladys",
+            "es": "Nombre en Gladys"
+          }
+        },
+        {
+          "key": "reason",
+          "type": "string",
+          "label": {
+            "en": "Reason",
+            "fr": "Cause",
+            "de": "Ursache",
+            "es": "Causa"
+          }
+        },
+        {
+          "key": "error",
+          "type": "string",
+          "label": {
+            "en": "Slack error code",
+            "fr": "Code d’erreur Slack",
+            "de": "Slack-Fehlercode",
+            "es": "Código de error de Slack"
+          }
+        }
+      ]
+    }
+  ],
+  "scene_actions": [
+    {
+      "key": "send_message",
+      "timeout_seconds": 30,
+      "label": {
+        "en": "Send a Slack message",
+        "fr": "Envoyer un message Slack",
+        "de": "Slack-Nachricht senden",
+        "es": "Enviar un mensaje de Slack"
+      },
+      "description": {
+        "en": "Posts a message in a channel, or in a direct message of the bot with a member. Scene variables ({{…}}) work in every field. For a camera snapshot, use the “Send a camera image” action of Gladys to a user linked on Slack.",
+        "fr": "Publie un message dans un canal, ou en message privé du robot à un membre. Les variables de scène ({{…}}) fonctionnent dans chaque champ. Pour une image de caméra, utilisez l’action « Envoyer une image de caméra » de Gladys vers un utilisateur lié sur Slack.",
+        "de": "Postet eine Nachricht in einem Kanal oder als Direktnachricht des Bots an ein Mitglied. Szenenvariablen ({{…}}) funktionieren in jedem Feld. Für ein Kamerabild nutze die Gladys-Aktion „Kamerabild senden“ an einen auf Slack verknüpften Benutzer.",
+        "es": "Publica un mensaje en un canal, o por mensaje directo del bot a un miembro. Las variables de escena ({{…}}) funcionan en todos los campos. Para una imagen de cámara, use la acción «Enviar una imagen de cámara» de Gladys a un usuario vinculado en Slack."
+      },
+      "fields": [
+        {
+          "key": "target",
+          "type": "string",
+          "label": {
+            "en": "Channel or member",
+            "fr": "Canal ou membre",
+            "de": "Kanal oder Mitglied",
+            "es": "Canal o miembro"
+          },
+          "description": {
+            "en": "A channel ID (C…, the bot must be in it) or a member ID (U…, direct message). Empty: the default channel of the configuration.",
+            "fr": "Un identifiant de canal (C…, le robot doit y être) ou de membre (U…, message privé). Vide : le canal par défaut de la configuration.",
+            "de": "Eine Kanal-ID (C…, der Bot muss darin sein) oder eine Mitglieds-ID (U…, Direktnachricht). Leer: der Standardkanal der Konfiguration.",
+            "es": "Un identificador de canal (C…, el bot debe estar en él) o de miembro (U…, mensaje directo). Vacío: el canal por defecto de la configuración."
+          },
+          "placeholder": {
+            "en": "e.g. C0123456789",
+            "fr": "ex. C0123456789",
+            "de": "z. B. C0123456789",
+            "es": "p. ej. C0123456789"
+          }
+        },
+        {
+          "key": "text",
+          "type": "string",
+          "required": true,
+          "label": {
+            "en": "Message",
+            "fr": "Message",
+            "de": "Nachricht",
+            "es": "Mensaje"
+          },
+          "description": {
+            "en": "Slack formatting works: *bold*, _italic_, <@U0123456789> to mention a member, <https://…|label> for a link.",
+            "fr": "La mise en forme Slack fonctionne : *gras*, _italique_, <@U0123456789> pour mentionner un membre, <https://…|libellé> pour un lien.",
+            "de": "Slack-Formatierung funktioniert: *fett*, _kursiv_, <@U0123456789>, um ein Mitglied zu erwähnen, <https://…|Text> für einen Link.",
+            "es": "El formato de Slack funciona: *negrita*, _cursiva_, <@U0123456789> para mencionar a un miembro, <https://…|texto> para un enlace."
+          },
+          "placeholder": {
+            "en": "The front door has been open for 5 minutes",
+            "fr": "La porte d’entrée est ouverte depuis 5 minutes",
+            "de": "Die Haustür ist seit 5 Minuten offen",
+            "es": "La puerta de entrada lleva 5 minutos abierta"
+          }
+        },
+        {
+          "key": "thread_ts",
+          "type": "string",
+          "label": {
+            "en": "Reply in the thread of",
+            "fr": "Répondre dans le fil de",
+            "de": "Im Thread antworten von",
+            "es": "Responder en el hilo de"
+          },
+          "description": {
+            "en": "Optional: the ts of a message, e.g. {{triggerEvent.data.ts}} to answer the message that started the scene.",
+            "fr": "Facultatif : le ts d’un message, ex. {{triggerEvent.data.ts}} pour répondre au message qui a lancé la scène.",
+            "de": "Optional: der ts einer Nachricht, z. B. {{triggerEvent.data.ts}}, um auf die Nachricht zu antworten, die die Szene gestartet hat.",
+            "es": "Opcional: el ts de un mensaje, p. ej. {{triggerEvent.data.ts}} para responder al mensaje que inició la escena."
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "key": "ts",
+          "type": "string",
+          "label": {
+            "en": "Message ts",
+            "fr": "ts du message",
+            "de": "ts der Nachricht",
+            "es": "ts del mensaje"
+          }
+        },
+        {
+          "key": "channel_id",
+          "type": "string",
+          "label": {
+            "en": "Channel ID",
+            "fr": "Identifiant du canal",
+            "de": "Kanal-ID",
+            "es": "Identificador del canal"
+          }
+        },
+        {
+          "key": "link",
+          "type": "string",
+          "label": {
+            "en": "Link to the message",
+            "fr": "Lien vers le message",
+            "de": "Link zur Nachricht",
+            "es": "Enlace al mensaje"
+          }
+        }
+      ]
+    }
+  ],
+  "widgets": [
+    {
+      "key": "status",
+      "icon": "message-square",
+      "label": {
+        "en": "Slack",
+        "fr": "Slack",
+        "de": "Slack",
+        "es": "Slack"
+      },
+      "description": {
+        "en": "Connection, workspace, messages of the day and the last messages of linked members.",
+        "fr": "Connexion, espace de travail, messages du jour et derniers messages des membres liés.",
+        "de": "Verbindung, Workspace, Nachrichten des Tages und letzte Nachrichten verknüpfter Mitglieder.",
+        "es": "Conexión, espacio de trabajo, mensajes del día y últimos mensajes de los miembros vinculados."
+      },
+      "settings": [
+        {
+          "key": "show_text",
+          "type": "boolean",
+          "default": false,
+          "label": {
+            "en": "Show the text of the messages",
+            "fr": "Afficher le texte des messages",
+            "de": "Text der Nachrichten anzeigen",
+            "es": "Mostrar el texto de los mensajes"
+          },
+          "description": {
+            "en": "Off by default: every user of a shared dashboard would read them.",
+            "fr": "Désactivé par défaut : tout utilisateur d’un tableau de bord partagé les lirait.",
+            "de": "Standardmäßig aus: Jeder Benutzer eines geteilten Dashboards würde sie lesen.",
+            "es": "Desactivado por defecto: cualquier usuario de un panel compartido los leería."
+          }
+        }
+      ],
+      "action_timeout_seconds": 30
+    }
+  ]
+}

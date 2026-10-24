@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="320" viewBox="0 0 900 320">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#57606a"/></marker></defs>
+  <rect width="900" height="320" fill="#ffffff"/>
+  <g font-family="DejaVu Sans, Arial, sans-serif" text-anchor="middle">
+    <rect x="20" y="70" width="220" height="160" rx="14" fill="#e8f1fb" stroke="#2f6fb5" stroke-width="2"/>
+    <text x="130" y="108" font-size="20" font-weight="bold" fill="#1f2328">Gladys Assistant</text>
+    <text x="130" y="138" font-size="14" fill="#57606a">brain, link codes,</text>
+    <text x="130" y="158" font-size="14" fill="#57606a">notifications, scenes,</text>
+    <text x="130" y="178" font-size="14" fill="#57606a">dashboard widget</text>
+    <rect x="340" y="70" width="220" height="160" rx="14" fill="#eef8f0" stroke="#1a7f37" stroke-width="2"/>
+    <text x="450" y="105" font-size="18" font-weight="bold" fill="#1f2328">gladys-slack</text>
+    <text x="450" y="135" font-size="14" fill="#57606a">Docker container</text>
+    <text x="450" y="155" font-size="14" fill="#57606a">Socket Mode client,</text>
+    <text x="450" y="175" font-size="14" fill="#57606a">Web API with a send queue;</text>
+    <text x="450" y="195" font-size="14" fill="#57606a">/data: event ids, counters</text>
+    <rect x="660" y="70" width="220" height="160" rx="14" fill="#fdf1e8" stroke="#c4581d" stroke-width="2"/>
+    <text x="770" y="105" font-size="17" font-weight="bold" fill="#1f2328">Your Slack workspace</text>
+    <text x="770" y="135" font-size="14" fill="#57606a">your own Slack app</text>
+    <text x="770" y="155" font-size="14" fill="#57606a">(slack-app-manifest.json),</text>
+    <text x="770" y="175" font-size="14" fill="#57606a">bot @gladys, /gladys,</text>
+    <text x="770" y="195" font-size="14" fill="#57606a">members and channels</text>
+    <path d="M245 150 H335" stroke="#57606a" stroke-width="2" marker-start="url(#a)" marker-end="url(#a)"/>
+    <text x="290" y="130" font-size="12" fill="#57606a">REST</text>
+    <text x="290" y="175" font-size="12" fill="#57606a">+ WebSocket</text>
+    <text x="290" y="255" font-size="12" fill="#57606a">/api/integration/v1/*</text>
+    <path d="M565 125 H655" stroke="#57606a" stroke-width="2" marker-end="url(#a)"/>
+    <text x="610" y="100" font-size="12" fill="#57606a">Web API</text>
+    <text x="610" y="114" font-size="12" fill="#57606a">HTTPS</text>
+    <path d="M565 175 H655" stroke="#57606a" stroke-width="2" marker-start="url(#a)" marker-end="url(#a)"/>
+    <text x="610" y="198" font-size="12" fill="#57606a">Socket Mode</text>
+    <text x="610" y="212" font-size="12" fill="#57606a">wss</text>
+    <text x="610" y="255" font-size="12" fill="#57606a">both opened by the container: no public URL</text>
+    <text x="450" y="295" font-size="13" fill="#57606a">Cloud transport: messages go through Slack. Unofficial integration, not affiliated with Slack. Illustration.</text>
+  </g>
+</svg>

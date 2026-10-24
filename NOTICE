@@ -1,0 +1,27 @@
+Gladys Slack integration
+Copyright 2026 William Deren
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+It talks to the Slack Web API and to Slack Socket Mode
+(https://docs.slack.dev) with the tokens of a Slack app that each user creates
+in their own workspace. This integration is unofficial: it is not affiliated
+with nor endorsed by Slack Technologies, LLC. Slack is a trademark of Slack
+Technologies, LLC. No logo or brand mark of Slack is used: the cover is a
+generic illustration.
+
+It depends on:
+  - @gladysassistant/integration-sdk (Apache License 2.0);
+  - ws (https://github.com/websockets/ws, MIT License), already a dependency
+    of the SDK, for the Socket Mode WebSocket (ping/pong).
+
+Design inspiration, read only, no code copied:
+  - the Socket Mode client of the official Slack SDK for Node.js
+    (https://github.com/slackapi/node-slack-sdk, MIT License): the ping
+    timeouts and the retry_attempt field of the envelopes;
+  - the Mattermost, Rocket.Chat and Zulip integrations for Gladys by guim31
+    (https://github.com/guim31): linking a chat account with a code sent to
+    the bot, the age limit of re-delivered messages.
+
+callemand/gladys-slack (2018) is a Gladys 3 module, unrelated to this
+integration.
