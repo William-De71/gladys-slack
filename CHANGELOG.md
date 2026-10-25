@@ -5,6 +5,12 @@ follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions
 follow [Semantic Versioning](https://semver.org/). This file is generated at
 each release from the Conventional Commits: do not edit it by hand.
 
+## [0.2.0] - 2026-10-25
+
+### Added
+
+- require Gladys 5.3 and declare catalog keywords ([844ee53](https://github.com/William-De71/gladys-slack/commit/844ee5376c0268ec0518b65dd8a927d15dfb94d3))
+
 ## [0.1.0] - 2026-10-24
 
 ### Added
@@ -18,4 +24,5 @@ each release from the Conventional Commits: do not edit it by hand.
 - **configuration:** a "Test the connection" button (workspace, bot, socket, default channel, linked members); tokens never logged, never stored outside the secret fields of Gladys; nothing private in `/data`
 - **i18n:** English, French, German and Spanish for the manifest, the runtime texts, the replies of the bot, the documentation and the README
 
+[0.2.0]: https://github.com/William-De71/gladys-slack/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/William-De71/gladys-slack/releases/tag/v0.1.0

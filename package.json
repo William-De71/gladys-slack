@@ -1,6 +1,6 @@
 {
   "name": "gladys-slack",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Unofficial Gladys Assistant external integration for Slack: talk to Gladys with a bot of your own workspace over Socket Mode (no public URL), scene triggers and actions, a dashboard widget. Not affiliated with Slack Technologies.",
   "homepage": "https://github.com/William-De71/gladys-slack",
