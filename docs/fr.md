@@ -8,7 +8,7 @@ L’intégration utilise le **Socket Mode** : elle ouvre elle-même la connexion
 
 ## Prérequis
 
-- Gladys Assistant 5.1.0 ou plus récent.
+- Gladys Assistant 5.3.0 ou plus récent.
 - Un espace de travail Slack où vous pouvez installer une app (sur certains espaces, un administrateur doit l’approuver).
 - Un accès Internet depuis Gladys (sortant uniquement).
 

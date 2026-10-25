@@ -8,7 +8,7 @@ Die Integration nutzt den **Socket Mode**: Sie öffnet die Verbindung zu Slack s
 
 ## Voraussetzungen
 
-- Gladys Assistant 5.1.0 oder neuer.
+- Gladys Assistant 5.3.0 oder neuer.
 - Ein Slack-Workspace, in dem du eine App installieren darfst (in manchen Workspaces muss ein Admin sie genehmigen).
 - Internetzugang von Gladys aus (nur ausgehend).
 

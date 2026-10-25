@@ -53,8 +53,8 @@ test('declares the cloud transport: slack.com only, from the Web API client', ()
   assert.doesNotMatch(source('../src/app.js'), /publishTransports|GLADYS_PREFER_LOCAL/);
 });
 
-test('widgets and scenes need Gladys 5.1.0; no field of a newer Gladys, no permission', () => {
-  assert.equal(manifest.gladys_version, '>=5.1.0');
+test('widgets and scenes need 5.1.0, catalog keywords 5.3.0; no other newer field, no permission', () => {
+  assert.equal(manifest.gladys_version, '>=5.3.0');
   assert.deepEqual(manifest.categories, ['notifications', 'assistants']);
   const text = JSON.stringify(manifest);
   assert.doesNotMatch(text, /"source":"houses"/, 'houses need 5.2.0');
@@ -64,9 +64,8 @@ test('widgets and scenes need Gladys 5.1.0; no field of a newer Gladys, no permi
     'network_discovery',
     'containers',
     'webhooks',
-    // Added to the store on 2026-10-23, they need Gladys 5.3.0.
-    'keywords',
-    'countries',
+    // Added to the store on 2026-10-23 (Gladys 5.3.0); keywords and countries are
+    // checked below.
     'energy_contracts',
     'account_schema',
   ]) {
@@ -271,4 +270,17 @@ test('the docs and the READMEs show exactly slack-app-manifest.json', () => {
     assert.equal(blocks.length, 1, file);
     assert.deepEqual(JSON.parse(blocks[0][1]), slackApp, file);
   }
+});
+
+test('catalog search terms of Gladys 5.3.0: keywords within bounds, countries', () => {
+  assert.ok(Array.isArray(manifest.keywords));
+  assert.ok(manifest.keywords.length >= 1 && manifest.keywords.length <= 10);
+  const normalized = manifest.keywords.map((keyword) => keyword.trim().toLowerCase());
+  for (const keyword of normalized) {
+    assert.ok(keyword.length >= 2 && keyword.length <= 30, keyword);
+  }
+  assert.equal(new Set(normalized).size, normalized.length, 'keywords must be unique');
+  assert.ok(!normalized.includes(manifest.name.toLowerCase()), 'the name is already searched');
+  // Usable worldwide: no `countries` restriction.
+  assert.equal(manifest.countries, undefined);
 });

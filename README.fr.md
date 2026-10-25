@@ -5,7 +5,7 @@
 [![Licence : Apache-2.0](https://img.shields.io/badge/licence-Apache--2.0-blue.svg)](LICENSE)
 [![Dernière version](https://img.shields.io/github/v/release/William-De71/gladys-slack?sort=semver)](https://github.com/William-De71/gladys-slack/releases)
 [![CI](https://img.shields.io/github/actions/workflow/status/William-De71/gladys-slack/release.yml?branch=main&label=CI)](https://github.com/William-De71/gladys-slack/actions/workflows/release.yml)
-[![Gladys](https://img.shields.io/badge/Gladys-%E2%89%A5%205.1.0-2f6fb5)](https://gladysassistant.com)
+[![Gladys](https://img.shields.io/badge/Gladys-%E2%89%A5%205.3.0-2f6fb5)](https://gladysassistant.com)
 
 ![Slack pour Gladys Assistant](cover.jpg)
 
@@ -160,7 +160,7 @@ Exemples :
 
 ## Prérequis
 
-- Gladys Assistant **5.1.0** ou plus récent (widgets de tableau de bord et déclencheurs / actions de scène) : les instances plus anciennes ne peuvent pas installer l’intégration.
+- Gladys Assistant **5.3.0** ou plus récent (widgets de tableau de bord et déclencheurs / actions de scène, le catalogue mots-clés/pays de Gladys 5.3) : les instances plus anciennes ne peuvent pas installer l’intégration.
 - Un espace de travail Slack où vous pouvez installer une app (n’importe quelle offre ; sur certains espaces, un administrateur doit l’approuver).
 - Un accès Internet depuis Gladys (sortant uniquement : aucun port à ouvrir).
 
